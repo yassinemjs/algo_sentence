@@ -1,0 +1,31 @@
+ALGORITHM Sentence
+VAR
+sent : STRING ;
+count_carac : INTEGER := 0;
+count_words :INETEGR := 0;
+nbVoyelles : INETEGR := 0;
+i : INTEGER :=0;
+  
+BEGIN
+ WHILE (sent[i] <> '.'  ) DO
+     count_carac := count_carac +1; 
+     i :=i+1
+ END_WHILE
+ 
+ WHILE (sent[i] == ' ') DO
+   count_words += count_words +1;
+   i := i+1;
+ END_WHILE
+ 
+WHILE (sent[i] <> '.'  ) DO
+    if (sent[i] in ['a','e','i','y','o','u']) THEN
+    nbVoyelles := nbVoyelles +1; 
+    END_IF
+     i := i+1;
+ END_WHILE 
+
+Write("our sentence contains" +count_carac+ "caracters");
+Write ("our sentence contains" +count_words+ "words");
+Write ("our sentence contains" +nbVoyels+ "voyels");
+
+END
